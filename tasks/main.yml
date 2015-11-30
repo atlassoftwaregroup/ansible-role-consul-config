@@ -1,5 +1,18 @@
 ---
 # tasks file for consul-config
+- name: install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - python-pip
+- name: install pip packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - awscli
+
 - name: register instance id
   command: "ec2metadata --instance-id"
   register: instance_id
