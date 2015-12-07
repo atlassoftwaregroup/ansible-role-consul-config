@@ -6,6 +6,10 @@ Installs consul config.
 Requirements
 ------------
 
+pip install awscli
+
+IAM Role needs "ec2:DescribeTags" in order to work
+
 Role Variables
 --------------
 
